@@ -1,121 +1,58 @@
-import DevisInput from "./DevisInput";
-import CustomSelect from "./CustomSelect";
-const DevisForm1 = (props) => {
-  const genders = [
+import Head from 'next/head';
+
+export default function Bibliothèque() {
+  // Supposons que vous avez un tableau de données pour chaque cadre
+  const data = [
     {
-      label: "Select",
-      value: "none",
+      title: "Dossier de Partenariat Mandat 2023-2024",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum euismod bibendum. Curabitur id justo ut libero tristique tincidunt. Fusce consectetur augue ac dolor dignissim, vel lacinia ligula tincidunt. Sed ac mauris sit amet nunc malesuada fermentum. In hac habitasse platea dictumst. Integer in sapien vel justo pharetra ultrices. Quisque vitae vestibulum libero. Nullam euismod orci id cursus pharetra. Etiam id libero ac elit cursus tincidunt.",
+      image: "/images/document.png",
     },
     {
-      label: "Homme",
-      value: "male",
+      title: "Dossier de Partenariat Mandat 2023-2024",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum euismod bibendum. Curabitur id justo ut libero tristique tincidunt. Fusce consectetur augue ac dolor dignissim, vel lacinia ligula tincidunt. Sed ac mauris sit amet nunc malesuada fermentum. In hac habitasse platea dictumst. Integer in sapien vel justo pharetra ultrices. Quisque vitae vestibulum libero. Nullam euismod orci id cursus pharetra. Etiam id libero ac elit cursus tincidunt.",
+      image: "/images/document.png",
     },
     {
-      label: "Femme",
-      value: "female",
+      title: "Dossier de Partenariat Mandat 2023-2024",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum euismod bibendum. Curabitur id justo ut libero tristique tincidunt. Fusce consectetur augue ac dolor dignissim, vel lacinia ligula tincidunt. Sed ac mauris sit amet nunc malesuada fermentum. In hac habitasse platea dictumst. Integer in sapien vel justo pharetra ultrices. Quisque vitae vestibulum libero. Nullam euismod orci id cursus pharetra. Etiam id libero ac elit cursus tincidunt.",
+      image: "/images/document.png",
     },
-    {
-      label: "Autre",
-      value: "other",
-    },
+    // Ajoutez d'autres objets de données ici
   ];
 
-  const { data, handleChange } = props;
   return (
-    <form className="flex flex-col gap-8">
-      <div className="flex flex-col items-start justify-start text-start gap-2">
-        <h2 className="font-bold text-xl">Détails personnels</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-8">
-          <DevisInput
-            label="*Nom et Prénom :"
-            name="fullname"
-            type="text"
-            value={data.fullname}
-            onChange={handleChange}
-          />
-
-          <DevisInput
-            label="*Date de naissance :"
-            name="birthdate"
-            type="date"
-            value={data.birthdate}
-            onChange={handleChange}
-          />
-          <DevisInput
-            label="*Numéro de téléphone :"
-            name="phone"
-            type="phone"
-            value={data.phone}
-            onChange={handleChange}
-          />
-          <CustomSelect
-            label="*Genre :"
-            name="gender"
-            type="select"
-            options={genders}
-            value={data.gender}
-            onChange={handleChange}
-          />
-          <DevisInput
-            label="*Adresse :"
-            name="address"
-            type="text"
-            value={data.address}
-            onChange={handleChange}
-          />
+    <main className="pt-20 overflow-hidden">
+      <div className="container mx-auto">
+        <div className="flex flex-col gap-4 items-center justify-center text-white py-20 text-center ">
+          <h1 className="font-bold text-5xl">Bibliothèque</h1>
+          <p className="font-light text-xl">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum euismod bibendum. Curabitur id justo ut
+            libero tristique tincidunt !
+          </p>
+        </div>
+        <div className="bg-white min-h-screen py-20 px-4 sm:px-8 lg:px-12 flex flex-col items-center justify-start gap-12">
+          {data.map((item, index) => (
+            <div
+              key={index}
+              className="rounded-lg border-2 border-primary flex flex-col sm:flex-row container mx-auto p-4 sm:p-8 gap-8 items-start hover:scale-[1.01] app_transition"
+            >
+              <div className="bg-white flex items-center gap-8">
+                <div className="w-full sm:w-1/3 overflow-hidden rounded-lg mb-4 sm:mb-0">
+                  <img src={item.image} alt={item.title} className="object-cover w-full h-full" />
+                </div>
+                <div className="w-full sm:w-2/3 gap-4">
+                  <h1 className="font-bold text-3xl text-primary mb-3 sm:mb-4">{item.title}</h1>
+                  <p className="text-lg text-secondary">{item.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-
-      <div className="flex flex-col items-start justify-start text-start gap-2">
-        <h2 className="font-bold text-xl">Informations sur le projet</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-8">
-          <DevisInput
-            label="*Nom du projet :"
-            name="projectname"
-            type="text"
-            value={data.projectname}
-            onChange={handleChange}
-          />
-          <DevisInput
-            label="Objectifs du projet :"
-            name="projectobjectives"
-            type="text"
-            value={data.projectobjectives}
-            onChange={handleChange}
-          />
-          <DevisInput
-            label="Sites Web concurrents :"
-            name="competitorwebsites"
-            type="text"
-            value={data.competitorwebsites}
-            onChange={handleChange}
-          />
-          <DevisInput
-            label="Coordonnées :"
-            name="contactinformation"
-            type="text"
-            value={data.contactinformation}
-            onChange={handleChange}
-          />
-          <DevisInput
-            label="Caractéristiques et fonctionnalités :"
-            name="featuresFunctionality"
-            type="text"
-            value={data.featuresFunctionality}
-            onChange={handleChange}
-          />
-          <DevisInput
-            label="Public cible :"
-            name="targetaudience"
-            type="text"
-            value={data.targetaudience}
-            onChange={handleChange}
-          />
-        </div>
-      </div>
-    </form>
+    </main>
   );
-};
-
-export default DevisForm1;
+}
