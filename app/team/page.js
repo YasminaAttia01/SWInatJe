@@ -6,7 +6,7 @@ const EquipePage = () => {
       image: "/images/team/salma.jpg",
       name: "Salma BENSAAD",
 
-      role: "Secrétaire",
+      role: "Secrétaire Générale",
       email: "Bensaadsalma634@gmail.com",
       linkedin:
         "https://l.facebook.com/l.php?u=http%3A%2F%2Flinkedin.com%2Fin%2Fsalma-ben-saad-6a6833258%3Ffbclid%3DIwAR2lG0D6BX8MQI0MWd8CnWNk0jUh6UYPOuxjy84tn5NJ0s2MRLbxBXuX1Lc&h=AT3qiJeFjzwZjnEZo86EKKo7JdqYK5aO_drR3BALZu3rDemyPFIk1nCwIwLP9xZsyiH4JB5vFinSiCnUTsj5WI5GRHlLPnGjBXVl3wittQcdsrM6Q602jUJNhbjCVM9yOBM7rA",
@@ -18,7 +18,7 @@ const EquipePage = () => {
       role: "Présidente",
       email: "Ikramkhalfalli@gmail.com",
       linkedin:
-        "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fikram-khalfalli%3Futm_source%3Dshare%26utm_campaign%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dandroid_app%26fbclid%3DIwAR0sl3aHyCqSyR9cBWVihA_8X4XSs6-ZWBNdAJaTZxdoNOZFqLQ0U-pukls&h=AT3qiJeFjzwZjnEZo86EKKo7JdqYK5aO_drR3BALZu3rDemyPFIk1nCwIwLP9xZsyiH4JB5vFinSiCnUTsj5WI5GRHlLPnGjBXVl3wittQcdsrM6Q602jUJNhbjCVM9yOBM7rA",
+        "https://www.linkedin.com/in/ikram-khalfalli/",
       facebook: "https://www.facebook.com/ikram.khalfalli1",
     },
     {
@@ -27,16 +27,16 @@ const EquipePage = () => {
       role: "Vice-Président",
       email: "tahadkhili0@gmail.com",
       linkedin:
-        "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.linkedin.com%2Fin%2Ftaha-dkhili%2F%3Ffbclid%3DIwAR09JQOmeTRnZx6bYVfSaHskYhwBiE3p1U4eobtN97bptWKFT3SH72ciYXc&h=AT3qiJeFjzwZjnEZo86EKKo7JdqYK5aO_drR3BALZu3rDemyPFIk1nCwIwLP9xZsyiH4JB5vFinSiCnUTsj5WI5GRHlLPnGjBXVl3wittQcdsrM6Q602jUJNhbjCVM9yOBM7rA",
+      "https://www.linkedin.com/in/taha-dkhili/",
       facebook: "https://www.facebook.com/taha.dkhili",
     },
     {
       image: "/images/team/youssef.jpg",
       name: "Youssef SRASRA",
       role: "Trésorier",
-      email: "salma@example.com",
-      linkedin: "https://www.linkedin.com/in/salmabensaad",
-      facebook: "https://www.facebook.com/salmabensaad",
+      email: "youssef.srasra10@gmail.com",
+      linkedin: "https://www.linkedin.com/in/youssef-srasra/",
+      facebook: "https://www.facebook.com/profile.php?id=100006602445996",
     },
     {
       image: "/images/team/yassmina.jpg",
@@ -51,16 +51,16 @@ const EquipePage = () => {
       image: "/images/team/malek.jpg",
       name: "Malek SEFI",
       role: "Responsable Pôle Marketing",
-      email: "salma@example.com",
-      linkedin: "https://www.linkedin.com/in/salmabensaad",
+      email: "sefimalek1234@gmail.com",
+      linkedin: "https://www.linkedin.com/in/malek-sefi-4aa504225/",
       facebook: "https://www.facebook.com/profile.php?id=100008002931304",
     },
     {
       image: "/images/team/hiba.jpg",
       name: "Hiba HMADI",
       role: "Responsable Pôle Développement Commercial",
-      email: "salma@example.com",
-      linkedin: "https://www.linkedin.com/in/salmabensaad",
+      email: "hibamouka@gmail.com",
+      linkedin: "https://www.linkedin.com/in/hiba-hmadi-6902b0284/",
       facebook: "https://www.facebook.com/profile.php?id=100008321918223",
     },
   ];

@@ -4,15 +4,15 @@ export default function Bibliothèque() {
   
   const data = [
     {
-      title: "Etats Financiers Melkart 2023-2024",
+      title: "Etats Financiers Melkart 2022-2023",
       description:
-        "",
+        "Ce document représente les états financiers arrétés au 31/05/2023",
       image: "/images/etatfinanciers.jpg",
       lien:"/pdfs/ETATS-FINANCIERS-MELKART-22-23.pdf"
     },
     {
       title: "Politique Qualité",
-      description: "La MELKART Junior Entreprise est une association étudiante à but non lucratif, établie au sein de l'École Nationale d'Ingénieurs de Carthage, qui a pour objectif principal de promouvoir l'insertion professionnelle des jeunes étudiants et de renforcer leurs compétences à travers la réalisation de projets concrets. Depuis Mai 2021, la MELKART Junior Entreprise s’engage à l’implémentation d’un système de management de la qualité pour améliorer la performance de l’entité. Dans cette optique, nous avons mis en place un système de management, basé sur l’approche risques pour détecter toute défaillance et agir en question dans le but d’assurer l’amélioration continue de l'entité.",
+      description: "Ce document représente la politique qualité",
       image: "/images/politiqueQualite.jpg",
       lien:"/pdfs/MJE23_POL_Qu_01.pdf"
     },

@@ -52,10 +52,7 @@ const AboutSection = () => {
         externes.
       </p>
     <div className="relative" style={{ height: '60vh', marginTop:'20px' }}>
-      <AiOutlineLeft
-        onClick={handlePrevSlide}
-        className="absolute left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
-      />
+      
       <div className="w-full h-[60vh] flex overflow-hidden relative m-auto">
         <Carousel selectedItem={currentSlide} onChange={setCurrentSlide} showThumbs={false} showStatus={false}>
           {gallery_images.map((image, index) => (
@@ -69,10 +66,7 @@ const AboutSection = () => {
           ))}
         </Carousel>
       </div>
-      <AiOutlineRight
-        onClick={handleNextSlide}
-        className="absolute right-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
-      />
+      
 
       <div className="relative flex justify-center p-2">
         {gallery_images.map((_, index) => (
@@ -80,7 +74,6 @@ const AboutSection = () => {
             className={
               index === currentSlide
                 
-              
             }
             key={index}
             onClick={() => {
