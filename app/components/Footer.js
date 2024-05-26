@@ -65,17 +65,17 @@ const Footer = () => {
           <h3 className="text-white font-bold mb-1">Contact</h3>
           <div className="w-10 h-1 bg-yellow-500 mb-2 rounded-full"></div>
           <div className="flex items-center gap-2 mb-1">
-            <img src="/logo/tel.png" className="h-4 w-4" alt="Phone Icon" />
-            <span className="text-white text-sm">
-              +216 53 471 630 | +216 55 414 262
-            </span>
-          </div>
+  <img src="/logo/tel.png" className="h-4 w-4" alt="Phone Icon" />
+  <a href="tel:+21653471630" className="text-white text-sm">
+  +216 53 471 630 | +216 55 414 262
+  </a>
+</div>
           <div className="flex items-center gap-2 mb-1">
-            <img src="/logo/mail.png" className="h-4 w-4" alt="Email Icon" />
-            <span className="text-white text-sm">
-              contact1.inatje@gmail.com
-            </span>
-          </div>
+  <img src="/logo/mail.png" className="h-4 w-4" alt="Email Icon" />
+  <a href="mailto:contact1.inatje@gmail.com" className="text-white text-sm">
+    contact1.inatje@gmail.com
+  </a>
+</div>
           <div className="flex items-center gap-2 mb-1">
             <img src="/logo/loc.png" className="h-5 w-5" alt="Location Icon" />
             <span className="text-white text-sm">
