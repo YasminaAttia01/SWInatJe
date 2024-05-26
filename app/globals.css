@@ -7,10 +7,19 @@
 }
 
 :root {
-  --primary: #2a4466;
-  --secondary: #17273b;
-  --tertiary: #1c2e44;
-  --quaternary: #385985;
+  --primary: #FFF9E9;
+  --secondary: #000000  ;
+  --tertiary: #F1C420;
+  --quaternary: #F1C420;
+.bg-custom {
+  background-color: #FFF9E9;
+}
+.f1c420-text {
+  color: #F1C420;
+  font-family: 'Covered By Your Grace', cursive;
+}
+
+
 }
 
 

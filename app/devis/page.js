@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React from "react";
 import { useState } from "react";
 import { InlineWidget } from "react-calendly";
@@ -8,6 +8,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 import { Form1Validation, Form2Validation } from "../../utils/validation";
+
 const page = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [errors, setErrors] = useState([]);
@@ -106,69 +107,74 @@ const page = () => {
   ];
 
   return (
-    <main className="min-h-screen pt-20 overflow-hidden">
-      <div className="flex flex-col gap-12 items-center justify-center text-white py-20 text-center ">
+    <main className=" min-h-screen pt-20 overflow-hidden">
+       <div className="min-h-[40vh] bg-agro bg-no-repeat bg-center flex flex-col items-center justify-center">
+        <h1 className="text-5xl md:text-8xl font-bold text-white text-center">Demandez un Devis </h1>
+      </div>
+
+      <div className="flex flex-col gap-12 items-center justify-center text-tertiary py-20 text-center bg-white"> 
         <div className="flex flex-col gap-4">
-          <h1 className="font-bold text-5xl">Demander un Devis</h1>
-          <p className="font-light text-xl ">
-            Pour planifier une rencontre avec nous , discuter de vos besoins et
-            obtenir un devis vous pouvez remplir le formulaire ci-dessous !
+          <p className="f1c420-text">
+            Pour planifier une rencontre avec nous, discuter de vos besoins et obtenir un devis, vous pouvez remplir le formulaire ci-dessous!
           </p>
         </div>
         {activeTab === 0 || activeTab === 1 ? (
-          <div className="container mx-auto max-w-screen-lg px-8 py-4 bg-white rounded-2xl text-secondary">
+  <div className="container mx-auto max-w-screen-lg px-8 py-4 bg-custom rounded-2xl text-secondary"> 
+
             <div className="flex justify-between items-center">
               <p className="font-bold text-3xl custom-underline text-start">
-                Start a project
+                Commencer un <br />
+                Nouveau Projet
               </p>
               <div className="min-w-[70px] max-w-[90px]">
-                <img
-                  src="/logo/logo_main.png"
-                  className="object-contain object-center"
-                />
-              </div>
+        <img
+          src="/logo/logo_main.png"
+          className="object-contain object-center"
+        />
+      </div>
             </div>
             <div className="flex justify-center items-center">
-              <div className="container mx-auto bg-white">
-                {formSteps[activeTab]}
-              </div>
-            </div>
+      <div className="container mx-auto bg-custom">
+        {formSteps[activeTab]}
+      </div>
+    </div>
 
-            <div className="flex w-full gap-2 my-4">
-              {activeTab === 0 ? null : (
-                <button
-                  onClick={() => setActiveTab((prev) => prev - 1)}
-                  disabled={activeTab === 0 ? "disabled" : ""}
-                  className={`text-white py-2 px-8 text-xl rounded-lg bg-primary  app_transition ${
-                    activeTab === 0
-                      ? "opacity-50 bg-slate-600"
-                      : "opacity-100 hover:bg-tertiary"
-                  }`}
-                >
-                  Précédent
-                </button>
+    <div className="flex w-full gap-2 my-4">
+      {activeTab === 0 ? null : (
+        <button
+          onClick={() => setActiveTab((prev) => prev - 1)}
+          disabled={activeTab === 0 ? "disabled" : ""}
+          className={`text-white py-2 px-8 text-xl rounded-lg bg-primary  app_transition ${
+            activeTab === 0
+              ? "opacity-50 bg-slate-600"
+              : "opacity-100 hover:bg-tertiary"
+          }`}
+        >
+          Précédent
+        </button>
               )}
 
-              {activeTab === 0 ? (
-                <button
-                  disabled={
-                    activeTab === formSteps.length - 1 ? "disabled" : ""
-                  }
-                  onClick={handleNextClick}
-                  className="text-white py-2 px-8 text-xl rounded-lg bg-primary hover:bg-tertiary app_transition "
-                >
-                  Suivant
-                </button>
-              ) : null}
+{activeTab === 0 ? (
+        <button
+          disabled={
+            activeTab === formSteps.length - 1 ? "disabled" : ""
+          }
+          onClick={handleNextClick}
+          className="text-white py-2 px-8 text-xl rounded-lg bg-primary hover:bg-tertiary app_transition "
+        >
+          Suivant
+        </button>
+      ) : null}
+
 
               {activeTab === formSteps.length - 1 ? (
-                <button
-                  className="text-white py-2 px-8 text-xl rounded-lg bg-primary hover:bg-tertiary app_transition "
-                  onClick={handleSubmit}
-                >
-                  Confirmer
-                </button>
-              ) : null}
+        <button
+          className="text-white py-2 px-8 text-xl rounded-lg bg-primary hover:bg-tertiary app_transition "
+          onClick={handleSubmit}
+        >
+          Confirmer
+        </button>
+      ) : null}
             </div>
           </div>
         ) : (

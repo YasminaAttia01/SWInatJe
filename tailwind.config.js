@@ -10,12 +10,13 @@ module.exports = {
       backgroundImage: {
         hero: "url('/images/hero_background.png')",
         values: "url('/images/values_section_bg.png')",
+        agro: "url('/images/ch3ir.png')"
       },
       colors: {
-        primary: "#2a4466",
-        secondary: "#17273b",
-        tertiary: "#1c2e44",
-        quaternary: "#385985",
+        primary: "#F1C420",
+        secondary: "#000000",
+        tertiary: "#",
+        quaternary: "#FFFFF",
       },
       dropShadow: {
         "3xl": "10 4px 4px rgba(0, 0, 0, 0.30)",

@@ -9,7 +9,7 @@ const DevisForm2 = (props) => {
         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8">
           <div className="flex flex-col gap-8">
             <DevisInput
-              label="Hébergement et Domaine :"
+              label="Services demandés :"
               name="hostingAndDomain"
               type="text"
               value={data.hostingAndDomain}
