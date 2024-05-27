@@ -20,9 +20,11 @@ export default function Navbar() {
     {
       title: "Nos Prestations",
       route: "#",
-      onMouseEnter: handleMouseEnter,
-      onMouseLeave: handleMouseLeave,
-      prestations: ["Cultures hors sol", "Les études", "le Systeme composteur"],
+      prestations: [
+        { name: "Cultures hors sol", route: "/CulturesHorsSol" },
+        { name: "Les études", route: "/Etude" },
+        { name: "le Systeme composteur", route: "/SysComposteur" }
+      ],
     },
     { title: "Nos Evénement", route: "/Events" },
     { title: "Bibliothèque", route: "/bibliotheque" },
@@ -47,8 +49,8 @@ export default function Navbar() {
           <li
             className="cursor-pointer mx-5 app_transition text-yellow-500 flex-col text-lg app_transition hover:text-secondary font-medium select-none relative"
             key={`link-${item.title}`}
-            onMouseEnter={item.onMouseEnter}
-            onMouseLeave={item.onMouseLeave}
+            onMouseEnter={item.title === "Nos Prestations" ? handleMouseEnter : null}
+            onMouseLeave={item.title === "Nos Prestations" ? handleMouseLeave : null}
           >
             <Link href={`${item.route}`}>{item.title}</Link>
             {item.title === "Nos Prestations" && showPrestationsList && (
@@ -58,7 +60,7 @@ export default function Navbar() {
                     key={index}
                     className="cursor-pointer text-white hover:text-black"
                   >
-                    {prestation}
+                    <Link href={prestation.route}>{prestation.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -67,10 +69,10 @@ export default function Navbar() {
         ))}
       </ul>
       <img
-          src="/logo/Slogan.png"
-          alt="Logo"
-          className="h-auto w-24 ml-10"
-        />
+        src="/logo/Slogan.png"
+        alt="Logo"
+        className="h-auto w-24 ml-10"
+      />
 
       <div className="lg:hidden flex items-center relative">
         <Menu

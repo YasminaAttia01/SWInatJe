@@ -13,7 +13,7 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       
-      <div className="overflow-hidden w-full bg-values bg-center bg-cover bg-no-repeat flex flex-col gap-10 justify-start items-center py-8">
+      <div className="overflow-hidden w-full bg-values bg-white bg-center bg-cover bg-no-repeat flex flex-col gap-10 justify-start items-center py-8">
         <ValuesSection />
         <MelkartNumbersSection />
         <PartnersSection />

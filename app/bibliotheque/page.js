@@ -30,6 +30,13 @@ export default function Bibliothèque() {
       image: "/images/RSE.jpg",
       lien: "/pdfs/PolitiqueRSE.pdf",
       smallTitle: "21-05-2023"
+    },
+    {
+      title: "INAT Magazine",
+      description: "Mandat 2023-2024",
+      image: "/images/alumni2.png",
+      lien: "/pdfs/MagazineINATJE.pdf",
+      smallTitle: "2023-2024"
     }
   ];
 
