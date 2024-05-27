@@ -34,8 +34,8 @@ const HeroSection = () => {
 
 
   return (
-    <main className="relative flex min-h-[100vh] w-full flex-col lg:flex-row lg:items-center lg:justify-between items-center justify-center gap-20 px-32">
-    <div className="absolute min-h-[110vh] w-full inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${images[currentImage]})` }}>
+    <main className="relative flex  w-full flex-col lg:flex-row lg:items-center lg:justify-between items-center justify-center gap-20 px-32 py-20">
+    <div className="absolute  w-full inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${images[currentImage]})` }}>
       {/* Black opacity overlay */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
     </div>
@@ -50,7 +50,7 @@ const HeroSection = () => {
       <div className="relative flex flex-col items-center justify-center w-full mt-20 lg:mt-0 px-20">
 
       <div className="flex flex-col gap-8 z-10 mt-[25rem] mb-8">
-          <h1 className="text-white font-bold text-5xl lg:text-6xl text-center">
+          <h1 className="text-white font-bold text-5xl lg:text-5xl text-center">
             Association <span className="text-yellow-500">INAT</span> 
             <br /> Junior Entreprise
             <br /> Leader de son ecosystème

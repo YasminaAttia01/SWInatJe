@@ -6,7 +6,7 @@ const ServiceCard = ({ service }) => {
     <div className="relative flex flex-col  text-left bg-white rounded-lg shadow-md ">
       <div className="relative mb-4">
         <Image className="rounded-tl-lg rounded-tr-lg shadow-md " src={service.image} alt={service.title} width={500} height={300} />
-        <div className="absolute   top-[11rem] right-5 w-16 h-16 bg-yellow-500 flex items-center justify-center rounded-md mb-4">
+        <div className="absolute   top-[9rem] right-5 w-16 h-16 bg-yellow-500 flex items-center justify-center rounded-md mb-4">
         <Image src={service.icon} alt="Icon" width={40} height={40} />
       </div>
       </div>

@@ -11,7 +11,7 @@ const ServicesSection = () => {
         "Les cultures hors sol sont une méthode de production végétale réalisée dans un environnement contrôlé. Cette approche favorise un rendement optimal des cultures et aide ainsi à optimiser l'eau et l'espace.",
     },
     {
-      image: "/images/service2.jpg",
+      image: "/images/service2.jpg", 
       icon: "/icons/service22.png",
       title: "Les Études",
       description:
@@ -26,7 +26,7 @@ const ServicesSection = () => {
     },
   ];
   return (
-<main className="relative top-[5vh] w-full flex flex-col items-center  bg-cover bg-center bg-no-repeat py-5" style={{ backgroundImage: "url('/images/background_services.png')" }}>
+<main className="relative  w-full flex flex-col items-center  bg-cover bg-center bg-no-repeat py-5" style={{ backgroundImage: "url('/images/background_services.png')" }}>
 <h3 className="f1c420-text" style={{ fontSize: '25px', textAlign: 'center' }}>
         Nos Prestations
       </h3>
