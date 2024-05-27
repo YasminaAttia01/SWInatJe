@@ -11,10 +11,10 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
-      
-      <div className="overflow-hidden w-full bg-values bg-center bg-cover bg-no-repeat flex flex-col gap-10 justify-start items-center py-8">
-        <ValuesSection />
+      <ValuesSection />
         <MelkartNumbersSection />
+      <div className="overflow-hidden w-full bg-values bg-center bg-cover bg-no-repeat flex flex-col  justify-start items-center py-8">
+      
         <PartnersSection />
       </div>
     </>

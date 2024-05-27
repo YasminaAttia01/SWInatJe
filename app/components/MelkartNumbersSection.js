@@ -1,49 +1,69 @@
+import Link from "next/link";
+
+
 const MelkartNumbersSection = () => {
   const melkartNumbers = [
     {
-      icon: "/icons/projets.svg",
-      number: "+30",
-      title: "Projets",
+      number: "50+",
+      title: "Projets Livrés",
     },
     {
-      icon: "/icons/satisfaction.svg",
-      number: "+80%",
-      title: "Satisfaction",
+      number: "45+",
+      title: "Collaborateurs",
     },
     {
-      icon: "/icons/sponsors.svg",
-      number: "+50",
-      title: "Sponsors",
+      number: "11",
+      title: "Éditions du forum",
     },
     {
-      icon: "/icons/melkartiens.svg",
-      number: "+60",
-      title: "Melkartiens",
+      number: "80%",
+      title: "Taux de satisfaction",
+    },
+    {
+      number: "20+",
+      title: "Actions RSE",
+    },
+    {
+      number: "100%",
+      title: "Taux Employabilité",
     },
   ];
+
   return (
-    <div className="w-full bg-white flex items-center justfiy-center flex-col gap-10 md:gap-20 py-20 shadow-2xl">
-      <h1 className="text-5xl lg:text-7xl font-bold text-primary text-center">
-        La Melkart En Chiffres
+    <div className="w-full bg-yellow-50 flex flex-row items-center justify-center py-20 px-40">
+      <div className="flex flex-col items-start justify-start text-start">
+         <h3 className="f1c420-text" style={{ fontSize: '25px', textAlign: 'left' }}>
+        Chiffres
+      </h3>
+      <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-800">
+        INAT Junior Entreprise en Chiffres
       </h1>
-      <div className="flex flex-wrap justify-center gap-y-10">
-        {melkartNumbers.map((value, index) => (
-          <div
-            key={index}
-            className={`flex flex-col items-center w-1/4 min-w-[320px] justify-center`}
-          >
-            <div className=" drop-shadow-xl h-36 w-36 flex items-center justify-center">
-              <img src={value.icon} alt={value.title} />
+      <p className="text-gray-600 mt-4 mb-5 max-w-2xl">
+        Découvrez les indicateurs essentiels de notre Junior Entreprise, témoignant de notre croissance, de notre engagement et de notre détermination.
+      </p>
+      <div className="flex items-center justify-start w-full ">
+      <Link href="/devis">
+            <div className="flex items-center justify-center bg-yellow-500 bg-opacity-90 rounded-xl drop-shadow-lg  px-3 sm:px-4 py-1 sm:py-2 hover:scale-105 app_transition select-none cursor-pointer">
+              <span className=" text-md sm:text-md  text-white truncate">
+                Demander un devis
+              </span>
             </div>
-            <h4 className="text-primary text-center mt-4 font-bold text-6xl">
+          </Link>
+        </div>
+      </div>
+      <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-8 px-5">
+        {melkartNumbers.map((value, index) => (
+          <div key={index} className="flex flex-row items-center p-4 gap-1">
+            <h4 className="text-5xl lg:text-6xl font-bold text-yellow-500">
               {value.number}
             </h4>
-            <span className="text-primary text-center font-bold text-3xl">
+            <span className="text-md lg:text-lg text-black font-semibold mt-2 text-center">
               {value.title}
             </span>
           </div>
         ))}
       </div>
+      
     </div>
   );
 };
