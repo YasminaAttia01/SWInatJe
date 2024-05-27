@@ -24,7 +24,7 @@ export default function Navbar() {
       onMouseLeave: handleMouseLeave,
       prestations: ["Cultures hors sol", "Les études", "le Systeme composteur"],
     },
-    { title: "Nos Evénement", route: "/team" },
+    { title: "Nos Evénement", route: "/Events" },
     { title: "Bibliothèque", route: "/bibliotheque" },
     { title: "Demander un devis", route: "/devis" },
     { title: "Contact", route: "/contact" },
