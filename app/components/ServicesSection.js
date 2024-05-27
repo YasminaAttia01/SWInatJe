@@ -26,7 +26,9 @@ const ServicesSection = () => {
     },
   ];
   return (
-<main className="relative  w-full flex flex-col items-center  bg-cover bg-center bg-no-repeat py-5" style={{ backgroundImage: "url('/images/background_services.png')" }}>
+
+
+<main className="relative  w-full flex flex-col items-center  bg-custom bg-cover bg-center bg-no-repeat py-5" style={{ backgroundImage: "url('/images/background_services.png')" }}>
 <h3 className="f1c420-text" style={{ fontSize: '25px', textAlign: 'center' }}>
         Nos Prestations
       </h3>

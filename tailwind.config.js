@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'Covered-By-Your-Grace': ['"Covered By Your Grace"', 'cursive'],
+        'Montserrat': ['Montserrat', 'sans-serif'],
+      },
       backgroundImage: {
         hero: "url('/images/hero_background.jpg')",
         values: "url('/images/values_section_bg.png')",

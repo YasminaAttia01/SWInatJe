@@ -113,7 +113,7 @@ const page = () => {
       </div>
 
       <div className="flex flex-col gap-12 items-center justify-center text-tertiary py-20 text-center bg-white"> 
-        <div className="flex flex-col gap-4">
+        <div className=" text-2xl md:text-2xl font-bold text-white text-center flex flex-col gap-4">
           <p className="f1c420-text">
             Pour planifier une rencontre avec nous, discuter de vos besoins et obtenir un devis, vous pouvez remplir le formulaire ci-dessous!
           </p>

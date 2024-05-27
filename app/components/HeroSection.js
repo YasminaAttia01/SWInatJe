@@ -36,7 +36,7 @@ const HeroSection = () => {
   return (
     <main className="relative flex  w-full flex-col lg:flex-row lg:items-center lg:justify-between items-center justify-center gap-20 px-32 py-20">
     <div className="absolute  w-full inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${images[currentImage]})` }}>
-      {/* Black opacity overlay */}
+
       <div className="absolute inset-0 bg-black opacity-50"></div>
     </div>
       
