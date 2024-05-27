@@ -8,8 +8,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
-  title: "Melkart JE",
-  description: "Melkart Junior Entreprise",
+  title: "INAT JE ",
+  description: "INAT Junior Entreprise",
 };
 
 export default function RootLayout({ children }) {

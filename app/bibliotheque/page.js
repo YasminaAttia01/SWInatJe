@@ -1,53 +1,57 @@
 import Head from 'next/head';
 
 export default function Bibliothèque() {
-  
+
   const data = [
     {
-      title: "Etats Financiers Melkart 2022-2023",
-      description:
-        "Ce document représente les états financiers arrétés au 31/05/2023",
-      image: "/images/etatfinanciers.jpg",
-      lien:"/pdfs/ETATS-FINANCIERS-MELKART-22-23.pdf"
+      title: "Charte RSE Client",
+      description: "Mandat 2023-2024",
+      image: "/images/charte.jpg",
+      lien: "/pdfs/CharteRSEClient.pdf",
+      smallTitle: "30/12/2023"
     },
     {
-      title: "Politique Qualité",
-      description: "Ce document représente la politique qualité",
-      image: "/images/politiqueQualite.jpg",
-      lien:"/pdfs/MJE23_POL_Qu_01.pdf"
+      title: "Charte RSE Membre",
+      description: "Mandat 2023-2024",
+      image: "/images/charte.jpg",
+      lien: "/pdfs/CharteRSEmembres.pdf",
+      smallTitle: "30/12/2023"
     },
-    
-    
+    {
+      title: "Politique Qualite",
+      description: "Mandat 2023-2024",
+      image: "/images/politique.jpg",
+      lien: "/pdfs/Politiquequalité.pdf",
+      smallTitle: "23/02/2024"
+    },
+    {
+      title: "Politique RSE",
+      description: "Mandat 2023-2024",
+      image: "/images/RSE.jpg",
+      lien: "/pdfs/PolitiqueRSE.pdf",
+      smallTitle: "21-05-2023"
+    }
   ];
 
   return (
-    <main className="pt-20 overflow-hidden">
-      <div className="container mx-auto">
-        <div className="flex flex-col gap-4 items-center justify-center text-white py-20 text-center ">
-          <h1 className="font-bold text-5xl">Bibliothèque</h1>
-          <p className="font-light text-xl">
-            
-          </p>
-        </div>
-        <div className="bg-white min-h-screen py-20 px-4 sm:px-8 lg:px-12 flex flex-col items-center justify-start gap-12">
-          {data.map((item, index) => (
-            <a href={item.lien} key={index} target="_blank" rel="noopener noreferrer">
-            <div
-              className="rounded-lg border-2 border-primary flex flex-col sm:flex-row container mx-auto p-4 sm:p-8 gap-8 items-start hover:scale-[1.01] app_transition"
-            >
-              <div className="bg-white flex items-center gap-8">
-                <div className="w-full sm:w-1/3 overflow-hidden rounded-lg mb-4 sm:mb-0">
-                  <img src={item.image} alt={item.title} className="object-cover w-full h-full" />
-                </div>
-                <div className="w-full sm:w-2/3 gap-4">
-                  <h1 className="font-bold text-3xl text-primary mb-3 sm:mb-4">{item.title}</h1>
-                  <p className="text-lg text-secondary">{item.description}</p>
-                </div>
+    <main className="min-h-screen pt-20 overflow-hidden bg-white">
+      <div className="min-h-[40vh] bg-agro bg-no-repeat bg-center flex flex-col items-center justify-center">
+        <h1 className="text-5xl md:text-8xl font-bold text-white text-center">Bibliothèques</h1>
+      </div>
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 sm:px-8 lg:px-24 py-12 justify-center">
+        {data.map((item, index) => (
+          <a href={item.lien} key={index} target="_blank" rel="noopener noreferrer">
+            <div className="relative bg-custom rounded-lg border-2 p-8 hover:shadow-xl app_transition w-full max-w-lg" style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '300px' }}>
+              <div className="absolute bottom-4 left-4 bg-primary text-white p-2 rounded">
+                <p>{item.smallTitle}</p>
               </div>
             </div>
-            </a>
-          ))}
-        </div>
+            <div className="text-center mt-4">
+              <h1 className="font-bold text-3xl text-primary mb-2">{item.title}</h1>
+              <p className="text-lg text-secondary">{item.description}</p>
+            </div>
+          </a>
+        ))}
       </div>
     </main>
   );

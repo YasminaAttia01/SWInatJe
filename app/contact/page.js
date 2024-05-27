@@ -1,12 +1,8 @@
-'use client';
+'use client'
 import React, { useState } from "react";
-import Joi from "joi";
 import axios from "axios";
-import TimelineStepper from "../components/TimelineStepper";
-import DevisInput from "../components/DevisInput";
 
 const ContactPage = () => {
-  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,9 +13,8 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('FormData before submit:', formData);
-    
     try {
-      const response = await axios.post("http://localhost:3300/api/contact", formData);
+      const response = await axios.post("http://localhost:3300/api/contact", formData); 
       if (response.status !== 200) {
         throw new Error('Request failed');
       }
@@ -37,93 +32,71 @@ const ContactPage = () => {
       [name]: value,
     }));
   };
-  
-  const InputField = ({ placeholder }) => {
-    return (
-      <input
-        className="w-full bg-[#E8E5E5] color-[#656464] rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-primary"
-        placeholder={placeholder}
-      />
-    );
-  };
 
-  const TextareaField = ({ placeholder }) => {
-    return (
-      <textarea
-        className="w-full bg-[#e8e5e5] rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-primary"
-        placeholder={placeholder}
-      />
-    );
-  };
-  
   return (
     <main className="min-h-screen pt-20 overflow-hidden">
-      <div className="min-h-[40vh] bg-agro bg-no-repeat bg-center flex flex-col items-center justify-center relative">
+      <div className="min-h-[40vh] bg-agro bg-no-repeat bg-center flex flex-col items-center justify-center">
         <h1 className="text-5xl md:text-8xl font-bold text-white text-center">Contactez-nous</h1>
-        {/* Three rectangles */}
-        <div className="absolute bottom- left-0 right-0 flex justify-center">
-          {[
-            { color: "rgba(246, 210, 88, 0.8)", text: "Rectangle 1" },
-            { color: "rgba(241, 196, 32, 0.8)", text: "Rectangle 2" },
-            { color: "rgba(255, 255, 255, 0.8)", text: "Rectangle 3" }
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="w-[399.98px] h-[220px] bg-white rounded-lg m-4 flex justify-center items-center"
-              style={{ backgroundColor: item.color }}
-            >
-              <p className="text-white font-Covered-By-Your-Grace">{item.text}</p>
-            </div>
-          ))}
-        </div>
       </div>
 
-      <div className="px-16 md:px-20 lg:px-24 xl:px-36 py-10 lg:py-20 bg-white flex flex-col lg:flex-row items-center justify-center">
-        <div className="container mx-auto max-w-screen-lg px-8 py-4 bg-custom rounded-2xl text-secondary"> 
-          <div className="w-full">
-            <h2 className="text-primary f1c420-text font-semibold text-3xl mb-20">
-             Contactez-Nous 
-            </h2>
-            <h1 className="mb- text-5xl md:text-5xl font-bold"> Ecrire un message </h1>
+      {/* Added section for three rectangles */}
+      <div className="flex justify-center py-8 bg-white">
+        {[
+          { color: "rgba(241, 196, 32, 1)", title: "A Propos ", text: "Cabinet de conseil spécialisé dans le domaine de l'agronomie." },
+          { color: "rgba(241, 196, 32, 0.7)", title: "Contact", text:  "+216 53 471 630 , +216 55 414 262 , contact1.inatje@gmail.com" },
+          { color: "rgba(241, 196, 32, 0.5)", title: "Adresse", text: "Cité Mahrajen, Manzah 1 INAT, Tunis Tunisie" }
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="w-[300.98px] h-[200px] bg-white rounded-lg m-4 flex flex-col justify-center items-center p-4"
+            style={{ backgroundColor: item.color }}
+          >
+            <h2 className="text-white font-Covered-By-Your-Grace text-2xl mb-2">{item.title}</h2>
+            <p className="text-white font-Montserrat">{item.text}</p>
           </div>
-          <form className="w-full flex flex-col items-center justify-center gap-4" onSubmit={handleSubmit}>
-            <DevisInput label="Nom et Prénom" name="name" type="text" value={formData.name} onChange={handleChange} />
-            <DevisInput label="Email" name="email" type="email" value={formData.email} onChange={handleChange}/>
-            <DevisInput label="Partenariat" name="partenariat" type="text" value={formData.partenariat} onChange={handleChange} />
-            <DevisInput
-              label="Entrez votre message"
-              name="message"
-              type="textarea"
-              value={formData.message}
-              onChange={handleChange}
-            />
-
-            <div className="flex w-full gap-2">
-              <button
-                type="submit"
-                className="text-white py-2 px-8 text-xl rounded-lg bg-primary hover:bg-tertiary app_transition"
-              >
-                Confirmer
-              </button>
-            </div>
-          </form>
-        </div>
+        ))}
       </div>
-    
-      <div className="w-full flex flex-col items-center justify-center py-12">
-        <h1 className="text-white bold text-center mb-10 font-bold text-5xl">
-          Où nous-trouver ?
-        </h1>
 
-        <div className="w-full max-w-[600px] rounded-2xl overflow-hidden">
-          <iframe
-            src="https://maps.app.goo.gl/uUV3aWPbxWCEVHFM6"
-            width="100%"
-            height="450"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+      {/* Contact Form and Map */}
+      <div className="flex justify-center py-12 bg-custom">
+        <div className="w-full max-w-screen-xl flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102163.62258070143!2d10.128747251822952!3d36.851738563646286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd34d69e694547%3A0xe1e0376f3637688f!2sNational%20Engineering%20School%20of%20Carthage!5e0!3m2!1sen!2stn!4v1701266189207!5m2!1sen!2stn"
+              width="100%"
+              height="450"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div className="w-full lg:w-1/2">
+            <div className="container mx-auto max-w-screen-lg px-8 py-4 bg-custom rounded-2xl text-secondary"> 
+              <div className="w-full">
+                <h2 className="text-primary f1c420-text font-semibold text-3xl mb-8">
+                 Contactez-Nous 
+                </h2>
+                <h1 className="text-2xl md:text-5xl font-bold text-black text-center"> Ecrire un message </h1>
+              </div> <br />
+              <div></div>
+              <form className="w-full flex flex-col items-center justify-center gap-6" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                  <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Nom et Prénom" className="h-16 p-4 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary" />
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" className="h-16 p-4 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary" />
+                  <input type="text" name="partenariat" value={formData.partenariat} onChange={handleChange} placeholder="Partenariat" className="h-16 p-4 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary" />
+                </div>
+                <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Entrez votre message" rows="6" className="h-64 p-4 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary w-full"></textarea>
+                <div className="flex w-full justify-center">
+                  <button
+                    type="submit"
+                    className="text-white py-3 px-12 text-xl rounded-lg bg-primary hover:bg-tertiary app_transition"
+                  >
+                    Confirmer
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </main>

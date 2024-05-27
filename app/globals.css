@@ -18,6 +18,40 @@
   color: #F1C420;
   font-family: 'Covered By Your Grace', cursive;
 }
+/* styles.css */
+.form-input {
+  width: 100%;
+  background-color: #f9f9f9;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 1rem 1rem 1rem 3rem;
+  outline: none;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.form-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(58, 151, 212, 0.3); 
+}
+
+.form-textarea {
+  width: 100%;
+  background-color: #f9f9f9;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 1rem 1rem 1rem 3rem;
+  outline: none;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.form-textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(58, 151, 212, 0.3); 
+}
+
+
 
 
 }
