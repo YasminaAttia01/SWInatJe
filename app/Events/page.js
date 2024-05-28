@@ -11,11 +11,11 @@ const EventsPage = () => {
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
         <div className="relative flex flex-col items-center justify-center w-full mt-20 lg:mt-0 px-20">
-          <div className="flex flex-col gap-8 z-10 mt-[25rem] mb-8">
-            <h1 className="text-white font-bold text-5xl lg:text-5xl text-center">
-              Nos Evénements <span className="text-yellow-500"></span> 
+          <div className="flex flex-col gap-8 z-10 mt-[20rem] mb-8">
+          <h1 className="text-yellow-500 font-bold text-5xl lg:text-5xl text-center ">
+              Nos Evénements
               <br /> 
-              <br />
+              <br /> 
             </h1>
           </div>
         </div>

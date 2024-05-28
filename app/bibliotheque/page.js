@@ -41,9 +41,18 @@ export default function Bibliothèque() {
   ];
 
   return (
-    <main className="min-h-screen pt-20 overflow-hidden bg-white">
-      <div className="min-h-[40vh] bg-agro bg-no-repeat bg-center flex flex-col items-center justify-center">
-        <h1 className="text-5xl md:text-8xl font-bold text-white text-center">Bibliothèques</h1>
+    <main className="min-h-screen overflow-hidden bg-custom">
+       <div className="relative flex w-full flex-col lg:flex-row lg:items-center lg:justify-between items-center justify-center gap-20 px-32 py-20">
+        <div className="absolute w-full inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(/images/ch3ir.png)` }}>
+        </div>
+        <div className="relative flex flex-col items-center justify-center w-full mt-10 lg:mt-0 px-20">
+          <div className="flex flex-col gap-8 z-10 mt-[5rem] mb-8">
+            <h1 className="text-white font-bold text-5xl lg:text-5xl text-center">
+              Bibliothèque
+            </h1>
+           
+          </div>
+        </div>
       </div>
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 sm:px-8 lg:px-24 py-12 justify-center">
         {data.map((item, index) => (

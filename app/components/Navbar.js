@@ -45,7 +45,7 @@ export default function Navbar() {
       route: "#", 
       dropdown: [
         { name: "Cultures hors sol", route: "/CulturesHorsSol" },
-        { name: "Des études de marché", route: "/Etude" },
+        { name: "Des études", route: "/Etude" },
         { name: "Système composteur", route: "/SysComposteur" }
       ]
     },

@@ -1,14 +1,14 @@
-'use client'
-import React, { useState, useEffect } from 'react';
+'use client';
+import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const Gallery = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const gallery_images = [
+  const galleryImages = [
     '/images/forum/_DSC3596.jpg',
-    //'/images/forum/_DSC3523.jpg',
-    //'/images/forum/_DSC3586.jpg',
+    '/images/forum/_DSC3623.jpg',
+    '/images/forum/_DSC3686.jpg',
     '/images/forum/_DSC3703.jpg',
     '/images/forum/_DSC3726.jpg',
     '/images/forum/_DSC3736.jpg',
@@ -48,14 +48,13 @@ const Gallery = () => {
     '/images/forum/DSC_5549.jpg',
   ];
 
-  const chunkSize = 4; // Number of images per slide
-  const chunkedImages = gallery_images.reduce((resultArray, item, index) => { 
+  // Divide images into chunks if necessary, each chunk can be a separate slide if you prefer grouping
+  const chunkSize = 3; // Adjust based on how many images you want per view if needed
+  const chunkedImages = galleryImages.reduce((resultArray, item, index) => {
     const chunkIndex = Math.floor(index / chunkSize);
-
     if (!resultArray[chunkIndex]) {
       resultArray[chunkIndex] = []; // Start a new chunk
     }
-
     resultArray[chunkIndex].push(item);
     return resultArray;
   }, []);
@@ -65,48 +64,42 @@ const Gallery = () => {
   };
 
   const handlePrevSlide = () => {
-    setCurrentSlide(
-      (prevSlide) => (prevSlide - 1 + chunkedImages.length) % chunkedImages.length
-    );
+    setCurrentSlide((prevSlide) => (prevSlide - 1 + chunkedImages.length) % chunkedImages.length);
   };
 
-  useEffect(() => {
-    const intervalId = setInterval(handleNextSlide, 5000);
-    return () => clearInterval(intervalId);
-  }, [currentSlide]);
-
   return (
-    <div className="w-full bg-custom flex flex-col justify-start items-center py-14 overflow-x-hidden">
-      <h1 className="text-xl  f1c420-text lg:text-2xl font-bold text-center">
-      Notre Galerie 
+    <div className="w-full bg-custom flex flex-col justify-center items-center py-14">
+      <h1 className="text-xl lg:text-2xl font-bold text-center mb-5 f1c420-text "  style={{ fontSize: '25px' }}>
+        Notre Galerie
       </h1>
-      <div className="relative" style={{ height: '30vh', marginTop: '20px' }}>
-        <div className="w-full h-[60vh] flex overflow-hidden relative m-auto">
-          <Carousel selectedItem={currentSlide} onChange={setCurrentSlide} showThumbs={false} showStatus={false}>
-            {chunkedImages.map((chunk, index) => (
-              <div key={index} className="flex justify-center items-center space-x-4">
-                {chunk.map((image, i) => (
-                  <img
-                    key={i}
-                    src={image}
-                    alt={`gallery-image-${index}-${i}`}
-                    style={{ maxHeight: '300px', maxWidth: '20%' }} 
-                  />
-                ))}
-              </div>
+      <Carousel 
+        selectedItem={currentSlide} 
+        onChange={setCurrentSlide} 
+        showThumbs={false} 
+        showStatus={false}
+        showArrows={true}
+        useKeyboardArrows
+        autoPlay={false}
+        swipeable
+        emulateTouch
+        dynamicHeight={false}
+        className="w-full custom-carousel"
+      >
+        {chunkedImages.map((chunk, index) => (
+          <div key={index} className="flex justify-center items-center space-x-4 mb-6">
+            {chunk.map((image, i) => (
+              <img
+                key={i}
+                src={image}
+                alt={`gallery-image-${index}-${i}`}
+                style={{ maxHeight: '400px', width: '100%', objectFit: 'cover' }} 
+              />
             ))}
-          </Carousel>
-        </div>
-        <div className="relative flex justify-center p-2">
-          {chunkedImages.map((_, index) => (
-            <div
-              key={index}
-              className={index === currentSlide ? "active-dot" : "inactive-dot"}
-              onClick={() => setCurrentSlide(index)}
-            />
-          ))}
-        </div>
-      </div>
+          </div>
+        ))}
+        
+      </Carousel>
+     
     </div>
   );
 };

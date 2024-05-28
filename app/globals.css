@@ -51,6 +51,22 @@
   box-shadow: 0 0 0 4px rgba(58, 151, 212, 0.3); 
 }
 
+.custom-carousel .carousel .control-dots {
+  position: absolute;
+  bottom: -0px; /* Adjust this value as needed to move dots further down */
+  width: 100%;
+  margin: 0;
+}
+
+.custom-carousel .carousel .control-dots .dot {
+  background: #aaaaaa; /* Customize dot color */
+  opacity: 0.75; /* Adjust dot visibility */
+}
+
+.custom-carousel .carousel .control-dots .dot.selected, 
+.custom-carousel .carousel .control-dots .dot:hover {
+  background: #ff9a02; /* Customize selected/hover dot color */
+}
 
 
 

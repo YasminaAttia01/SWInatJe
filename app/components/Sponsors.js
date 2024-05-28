@@ -40,7 +40,7 @@ const PartnersSection = () => {
 
   return (
     <div className="w-full bg-primary flex items-center justify-center flex-col gap-10 md:gap-20 py-20 shadow-2xl">
-      <h1 className="text-5xl lg:text-7xl font-bold text-white text-center">
+      <h1 className="text-5xl lg:text-7xl font-bold text-center">
       Ceux qui nous ont fait confiance :
       </h1>
       <div className="flex items-center justify-start gap- overflow-hidden">

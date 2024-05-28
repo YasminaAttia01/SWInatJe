@@ -107,23 +107,32 @@ const page = () => {
   ];
 
   return (
-    <main className=" min-h-screen pt-20 overflow-hidden">
-       <div className="min-h-[40vh] bg-agro bg-no-repeat bg-center flex flex-col items-center justify-center">
-        <h1 className="text-5xl md:text-8xl font-bold text-white text-center">Demandez un Devis </h1>
+    <main className=" min-h-screen overflow-hidden">
+        <div className="relative flex w-full flex-col lg:flex-row lg:items-center lg:justify-between items-center justify-center gap-20 px-32 py-20">
+        <div className="absolute w-full inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(/images/ch3ir.png)` }}>
+        </div>
+        <div className="relative flex flex-col items-center justify-center w-full mt-10 lg:mt-0 px-20">
+          <div className="flex flex-col gap-8 z-10 mt-[5rem] mb-8">
+            <h1 className="text-white font-bold text-5xl lg:text-5xl text-center">
+              Demandez un devis
+            </h1>
+           
+          </div>
+        </div>
       </div>
 
       <div className="flex flex-col gap-12 items-center justify-center text-tertiary py-20 text-center bg-white"> 
-        <div className=" text-2xl md:text-2xl font-bold text-white text-center flex flex-col gap-4">
-          <p className="f1c420-text">
-            Pour planifier une rencontre avec nous, discuter de vos besoins et obtenir un devis, vous pouvez remplir le formulaire ci-dessous!
+        <div className=" text-xl md:text-xl font-bold text-center flex flex-col gap-4">
+          <p className=" px-5 pb-4">
+            Pour planifier une rencontre avec nous, discuter de vos besoins et obtenir un devis,<br /> vous pouvez remplir le formulaire ci-dessous!
           </p>
         </div>
         {activeTab === 0 || activeTab === 1 ? (
   <div className="container mx-auto max-w-screen-lg px-8 py-4 bg-custom rounded-2xl text-secondary"> 
 
             <div className="flex justify-between items-center">
-              <p className="font-bold text-3xl custom-underline text-start">
-                Commencer un <br />
+              <p className="font-extrabold text-3xl custom-underline text-start">
+                Commencer un
                 Nouveau Projet
               </p>
               <div className="min-w-[70px] max-w-[90px]">

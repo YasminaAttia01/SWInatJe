@@ -34,17 +34,26 @@ const ContactPage = () => {
   };
 
   return (
-    <main className="min-h-screen pt-20 overflow-hidden">
-      <div className="min-h-[40vh] bg-agro bg-no-repeat bg-center flex flex-col items-center justify-center">
-        <h1 className="text-5xl md:text-8xl font-bold text-white text-center">Contactez-nous</h1>
+    <main className="min-h-screen overflow-hidden">
+        <div className="relative flex w-full flex-col lg:flex-row lg:items-center lg:justify-between items-center justify-center gap-20 px-32 py-20">
+        <div className="absolute w-full inset-0 bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(/images/ch3ir.png)` }}>
+        </div>
+        <div className="relative flex flex-col items-center justify-center w-full mt-10 lg:mt-0 px-20">
+          <div className="flex flex-col gap-8 z-10 mt-[5rem] mb-8">
+            <h1 className="text-white font-bold text-5xl lg:text-5xl text-center">
+              Contactez-nous
+            </h1>
+           
+          </div>
+        </div>
       </div>
 
       {/* Added section for three rectangles */}
       <div className="flex justify-center py-8 bg-white">
         {[
           { color: "rgba(241, 196, 32, 1)", title: "A Propos ", text: "Cabinet de conseil spécialisé dans le domaine de l'agronomie." },
-          { color: "rgba(241, 196, 32, 0.7)", title: "Contact", text:  "+216 53 471 630 , +216 55 414 262 , contact1.inatje@gmail.com" },
-          { color: "rgba(241, 196, 32, 0.5)", title: "Adresse", text: "Cité Mahrajen, Manzah 1 INAT, Tunis Tunisie" }
+          { color: "rgb(102, 70, 28, 1)", title: "Contact", text:  "+216 53 471 630 , +216 55 414 262 , contact1.inatje@gmail.com" },
+          { color: "rgb(33, 25, 2, 1)", title: "Adresse", text: "Cité Mahrajen, Manzah 1 INAT, Tunis Tunisie" }
         ].map((item, index) => (
           <div
             key={index}
@@ -62,7 +71,7 @@ const ContactPage = () => {
         <div className="w-full max-w-screen-xl flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="w-full lg:w-1/2 rounded-2xl overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102163.62258070143!2d10.128747251822952!3d36.851738563646286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd34d69e694547%3A0xe1e0376f3637688f!2sNational%20Engineering%20School%20of%20Carthage!5e0!3m2!1sen!2stn!4v1701266189207!5m2!1sen!2stn"
+              src="https://www.google.com/maps/d/u/0/embed?mid=1RDut2znQxus9qb6rcRMac1n_KbY&ll=36.828789820641724%2C10.181139707565308&z=17"
               width="100%"
               height="450"
               allowFullScreen
