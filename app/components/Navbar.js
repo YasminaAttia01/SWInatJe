@@ -1,102 +1,112 @@
-'use client'
+'use client';
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
-  const [showPrestationsList, setShowPrestationsList] = useState(false);
-  const prestationsRef = useRef(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [showPrestationsDropdown, setShowPrestationsDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
-    // Handler to call on outside click
+    // Handler for clicking outside the dropdown
     function handleClickOutside(event) {
-      if (prestationsRef.current && !prestationsRef.current.contains(event.target)) {
-        setShowPrestationsList(false);
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowPrestationsDropdown(false);
       }
     }
 
-    // Bind the event listener
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      // Unbind the event listener on clean up
-      document.removeEventListener("mousedown", handleClickOutside);
+    // Handler for scroll events
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
     };
-  }, [prestationsRef]);
+
+    // Add event listeners
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup function
+    return () => {
+      // Remove event listeners
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const toggleDropdown = () => {
+    setShowPrestationsDropdown(prev => !prev);
+  };
 
   const navigationLinks = [
     { title: "Accueil", route: "/" },
-    {
-      title: "Nos Prestations",
-      route: "#",
-      prestations: [
+    { 
+      title: "Nos Prestations", 
+      route: "#", 
+      dropdown: [
         { name: "Cultures hors sol", route: "/prestation1" },
-        { name: "Les études", route: "/prestation2" },
-        { name: "le Systeme composteur", route: "/prestation3" }
-      ],
+        { name: "Des études de marché", route: "/prestation2" },
+        { name: "Système composteur", route: "/prestation3" }
+      ]
     },
-    { title: "Nos Evénements", route: "/Events" },
+    { title: "Nos Événements", route: "/events" },
+    { title: "INAT Academy", route: "/academy" },
     { title: "Bibliothèque", route: "/bibliotheque" },
-    { title: "Demander un devis", route: "/devis" },
+    { title: "Demander un Devis", route: "/devis" },
     { title: "Contact", route: "/contact" },
   ];
 
   return (
-    <nav className="w-full h-20 flex justify-between items-center text-black fixed z-[50] px-8 py-4 bg-custom bg-opacity-50 shadow-lg text-sm">
-      <div className="flex h-20 justify-start items-center">
+    <nav className={`fixed w-full z-50 px-8 py-1 transition-all duration-300 ease-in-out ${isScrolled ? 'bg-black bg-opacity-75 shadow-lg' : 'bg-transparent'}`}>
+      <div className="container mx-auto flex justify-between items-center">
         <Link href="/" legacyBehavior>
           <a><img src="/logo/logo1.png" alt="INAT Logo" className="h-auto w-24" /></a>
         </Link>
-      </div>
-
-      <ul className="hidden lg:flex lg:justify-center lg:items-center lg:list-none">
-        {navigationLinks.map((item) => (
-          <li
-            className="cursor-pointer mx-5 text-yellow-500 text-lg hover:text-secondary font-medium select-none relative"
-            key={item.title}
-            ref={item.title === "Nos Prestations" ? prestationsRef : null}
-            onClick={() => item.prestations ? setShowPrestationsList(!showPrestationsList) : null}
-          >
-            <Link href={item.route} legacyBehavior>
-              <a>{item.title}</a>
-            </Link>
-            {item.prestations && showPrestationsList && (
-              <ul className="absolute top-20 left-0 bg-yellow-300 bg-opacity-20 w-40 mt-1 list-none p-2 rounded-lg">
-                {item.prestations.map((prestation) => (
-                  <li key={prestation.name} className="text-white hover:text-black">
-                    <Link href={prestation.route} legacyBehavior>
-                      <a>{prestation.name}</a>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
-
-      <div className="lg:hidden flex items-center relative">
+        <div className="hidden lg:flex items-center space-x-10">
+          {navigationLinks.map((link) => (
+            <div className="relative" key={link.title}>
+              {link.dropdown ? 
+                (<button onClick={toggleDropdown} className="text-white hover:text-yellow-500 font-medium">
+                  {link.title}
+                </button>) : 
+                (<Link href={link.route} legacyBehavior>
+                  <a className="text-white hover:text-yellow-500 font-medium">{link.title}</a>
+                </Link>)
+              }
+              {link.dropdown && showPrestationsDropdown && (
+                <ul className="absolute bg-black text-white p-2 rounded-md shadow-lg mt-1 w-56" ref={dropdownRef}>
+                  {link.dropdown.map((item) => (
+                    <li key={item.name} className="hover:text-yellow-500 p-2 ">
+                      <Link href={item.route} legacyBehavior>
+                        <a>{item.name}</a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+        <Link href="/" legacyBehavior>
+          <a><img src="/logo/Slogan.png" alt="INAT Logo" className="h-auto w-24" /></a>
+        </Link>
         <Menu
-          onClick={() => setToggle(true)}
-          className="w-[35px] h-[35px] text-white cursor-pointer"
+          onClick={() => setToggle(!toggle)}
+          className="text-white cursor-pointer lg:hidden"
         />
         {toggle && (
-          <div className="fixed z-[5] w-full h-screen flex justify-end items-end bg-primary bg-opacity-90 backdrop-blur-sm px-4 py-4 pb-16 right-0 inset-y-0">
+          <div className="fixed inset-0 bg-black bg-opacity-75 px-4 py-4 flex flex-col items-center lg:hidden">
             <X
-              className="w-[35px] h-[35px] text-white cursor-pointer"
               onClick={() => setToggle(false)}
+              className="text-white cursor-pointer mb-4"
             />
-            <ul className="w-full flex flex-col m-0 p-0 list-none">
-              {navigationLinks.map((item) => (
-                <li className="m-4" key={item.title}>
-                  <Link href={item.route} legacyBehavior>
-                    <a className="text-white text-lg hover:text-secondary select-none" onClick={() => setToggle(false)}>
-                      {item.title}
-                    </a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {navigationLinks.map((link) => (
+              <Link key={link.title} href={link.route} legacyBehavior>
+                <a className="text-white text-lg hover:text-yellow-500 select-none py-2" onClick={() => setToggle(false)}>
+                  {link.title}
+                </a>
+              </Link>
+            ))}
           </div>
         )}
       </div>

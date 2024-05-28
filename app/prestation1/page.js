@@ -20,7 +20,7 @@ const Prestation1 = () => {
           <Link href="/devis">
             <div className="flex items-center justify-center bg-yellow-500 bg-opacity-90 rounded-2xl drop-shadow-lg px-14 lg:px-10 py-4 hover:scale-105 app_transition select-none cursor-pointer">
               <span className="font-extrabold text-2xl lg:text-xl text-white truncate">
-                Demander un devis
+              Lançons un projet ensemble
               </span>
             </div>
           </Link>
