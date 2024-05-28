@@ -47,9 +47,18 @@ const Prestation1 = () => {
             <Image src="/images/service1.jpg" alt="Système hydroponique table" layout="responsive" width={400} height={250} className="rounded-lg "/>
             <h3 className="font-semibold mt-2" style={{ color:'#DAA520' }}>Système hydroponique table</h3>
           </div>
-          <div className="flex flex-col items-center">
-            <Image src="/images/pres11.png" alt="Système hydroponique étagère " layout="responsive" width={400} height={250} className="rounded-lg "/>
-            <h3 className="font-semibold mt-2" style={{ color:'#DAA520' }}>Système hydroponique étagère</h3>
+          <div className="flex flex-col">
+  <div className="flex flex-col items-center w-full" 
+     style={{
+       height: '350px',
+       backgroundImage: 'url(/images/pres11.png)',
+       backgroundSize: 'cover',
+       backgroundPosition: 'top',
+       backgroundRepeat: 'no-repeat',
+       borderRadius:'10px'
+     }}>           
+          </div>
+          <h3 className="font-semibold mt-2" style={{ color:'#DAA520' }}>Système hydroponique étagère</h3>
           </div>
         </div>
       </div>
@@ -68,14 +77,30 @@ const Prestation1 = () => {
         Un mur végétal, également connu sous le nom de jardin vertical ou mur végétalisé, est un agencement architectural innovant où des plantes sont cultivées verticalement sur une structure fixe . Le mur végétal peut être installé à l'intérieur ou à l'extérieur des bâtiments, apportant des avantages tels que l'amélioration de la qualité de l'air, l'isolation thermique, la décoration esthétique et la contribution à la biodiversité urbaine.
         </p>
         <div className="mt-6 grid grid-cols-2 gap-10">
-          <div className="flex flex-col items-center ">
-            <Image src="/images/pres22.png" alt="Système hydroponique table" layout="responsive" width={400} height={250} className="rounded-lg "/>
-          </div>
-          <div className="flex flex-col items-center">
-            <Image src="/images/pres222.png" alt="Système hydroponique étagère " layout="responsive" width={400} height={250} className="rounded-lg "/>
-          </div>
+        <div className="flex flex-col items-center w-full" 
+     style={{
+       height: '350px',
+       backgroundImage: 'url(/images/pres22.png)',
+       backgroundSize: 'cover',
+       backgroundPosition:'center',
+       backgroundRepeat: 'no-repeat',
+       borderRadius:'10px'
+     }}>
+
+</div>
+
+<div className="flex flex-col items-center w-full" 
+     style={{
+       height: '350px',
+       backgroundImage: 'url(/images/pres222.jpg)',
+       backgroundSize: 'cover',
+       backgroundPosition: 'center',
+       backgroundRepeat: 'no-repeat',
+       borderRadius:'10px'
+     }}>
         </div>
-      </div>
+        </div>
+        </div>
 
 
 
@@ -90,14 +115,33 @@ const Prestation1 = () => {
 Ce récipient, généralement rectangulaire et souvent en bois, en plastique ou en métal,contient un substrat de culture dans lequel les plantes sont cultivées :
         </p>
         <div className="mt-6 grid grid-cols-2 gap-10">
-          <div className="flex flex-col items-center ">
-            <Image src="/images/pres33.png" alt="Système hydroponique table" layout="responsive" width={400} height={250} className="rounded-lg "/>
-            <h3 className="font-semibold mt-2" style={{ color:'#DAA520' }}>Bac à potager à fond</h3>
+        <div className="flex flex-col">
+        <div className="flex flex-col items-center w-full" 
+     style={{
+       height: '400px',
+       backgroundImage: 'url(/images/pres33.jpg)',
+       backgroundSize: 'cover',
+       backgroundPosition: 'center',
+       backgroundRepeat: 'no-repeat',
+       borderRadius:'10px'
+     }}>
+        </div> 
+        <h3 className="font-semibold mt-2" style={{ color:'#DAA520' }}>Bac à potager à fond</h3>
+</div>
+        <div className="flex flex-col">
+           
+        <div className="flex flex-col items-center w-full" 
+     style={{
+       height: '400px',
+       backgroundImage: 'url(/images/pres333.jpg)',
+       backgroundSize: 'cover',
+       backgroundPosition: 'center',
+       backgroundRepeat: 'no-repeat',
+       borderRadius:'10px'
+     }}>            
           </div>
-          <div className="flex flex-col items-center">
-            <Image src="/images/pres333.png" alt="Système hydroponique étagère " layout="responsive" width={400} height={250} className="rounded-lg "/>
-            <h3 className="font-semibold mt-2" style={{ color:'#DAA520' }}>Bac à potager à support</h3>
-          </div>
+          <h3 className="font-semibold mt-2" style={{ color:'#DAA520' }}>Bac à potager à support</h3>
+      </div>
         </div>
       </div>
 </>
