@@ -49,7 +49,7 @@ const HeroSection = () => {
       </button>
       <div className="relative flex flex-col items-center justify-center w-full mt-20 lg:mt-0 px-20">
 
-      <div className="flex flex-col gap-8 z-10 mt-[25rem] mb-8">
+      <div className="flex flex-col gap-8 z-10 mt-[18rem] mb-8">
           <h1 className="text-white font-bold text-5xl lg:text-5xl text-center">
             Association <span className="text-yellow-500">INAT</span> 
             <br /> Junior Entreprise
