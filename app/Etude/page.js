@@ -14,6 +14,7 @@ const EtudePage = () => {
               Les études 
             </h1>
             <p className="text-white">Etude marché | Etude technico-économique | Etude de faisabilité</p>
+            
           </div>
         </div>
       </div>

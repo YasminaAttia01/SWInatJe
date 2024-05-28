@@ -1,7 +1,7 @@
 import React from "react";
 
 const SysComposteurPage = () => {
-  const image = '/images/spe-bac-ingenieur-agronome.png.png';
+  const image = '/images/pallet-compost-bins-2.jpg.jpg';
   return (
     <div>
       <div className="relative flex w-full flex-col lg:flex-row lg:items-center lg:justify-between items-center justify-center gap-20 px-32 py-20">
@@ -30,17 +30,15 @@ const SysComposteurPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-9 items-start">
             <div className="lg:col-span-2 bg-custom py-8 px-6 rounded-lg">
               <h3 className="f1c420-text underline" style={{ fontSize: '30px', textAlign: 'left' }}>
-                Etude marché               
+              Système composteur en palette              
               </h3>
               <br />
-              <p className="text-gray-600 mb-4 leading-8 text-lg">
-                C’est une analyse méthodique des caractéristiques, tendances et besoins d'un marché donné pour éclairer les décisions commerciales.
-              </p>
+              
             </div>
             <div className="lg:col-span-1 flex items-start justify-end">
               <div style={{ width: '400px', height: '400px', overflow: 'hidden', borderRadius: '10px' }}>
                 <img 
-                  src="/images/Agritech-Market-Research.jpg" 
+                  src="/images/syscom.jpg" 
                   alt="Event photo" 
                   className="w-full h-full object-cover shadow-md" 
                 />
@@ -49,44 +47,59 @@ const SysComposteurPage = () => {
           </div>
           <hr className="my-10 border-t border-gray-300" />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-9 items-start">
+          <div className="lg:col-span-2 bg-custom py-8 px-6 rounded-lg">
+              <h3 className="f1c420-text underline" style={{ fontSize: '30px', textAlign: 'left' }}>
+              Système composteur en polyéthylène               
+              </h3>
+              <br />
+            </div>
             <div className="lg:col-span-1 flex items-start justify-end">
               <div style={{ width: '800px', height: '400px', overflow: 'hidden', borderRadius: '10px' }}>
                 <img 
-                  src="/images/Visuekl.jpg" 
+                  src="/images/sysPoly.jpg" 
+                  alt="Event photo" 
+                  className="w-full h-full object-cover shadow-md" 
+                />
+                <img 
+                  src="/images/sysP2.jpg" 
                   alt="Event photo" 
                   className="w-full h-full object-cover shadow-md" 
                 />
               </div>
             </div>
-            <div className="lg:col-span-2 bg-custom py-8 px-6 rounded-lg">
-              <h3 className="f1c420-text underline" style={{ fontSize: '30px', textAlign: 'left' }}>
-                Etude technico-économique               
-              </h3>
-              <br />
-              <p className="text-gray-600 mb-4 leading-8 text-lg">
-                C’est une investigation approfondie et systématique des aspects techniques et opérationnels d'un projet. Elle examine les aspects pratiques, les ressources nécessaires, les contraintes techniques et les solutions techniques pour la mise en œuvre réussie du projet ou de l'activité agricole. Cette étude permet de déterminer la faisabilité technique d'un projet et d'élaborer des plans concrets pour sa réalisation.
-              </p>
-            </div>
+            
           </div>
           <hr className="my-10 border-t border-gray-300" />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-9 items-start">
             <div className="lg:col-span-2 bg-custom py-8 px-6 rounded-lg">
               <h3 className="f1c420-text underline" style={{ fontSize: '30px', textAlign: 'left' }}>
-                Etude de faisabilité               
+              Composteur rotatif               
               </h3>
               <br />
-              <p className="text-gray-600 mb-4 leading-8 text-lg">
-                -Il s’agit d’une évaluation méthodique des effets potentiels, positifs et négatifs, d'une action ou d'un projet agricole.
-              </p>
             </div>
             <div className="lg:col-span-1 flex items-start justify-end">
               <div style={{ width: '400px', height: '400px', overflow: 'hidden', borderRadius: '10px' }}>
                 <img 
-                  src="/images/etudeF.jpg" 
+                  src="/images/rotat1.jpg" 
+                  alt="Event photo" 
+                  className="w-full h-full object-cover shadow-md" 
+                />
+                
+              </div>
+              <div className="lg:col-span-1 flex items-start justify-end">
+              <div style={{ width: '800px', height: '400px', overflow: 'hidden', borderRadius: '10px' }}>
+                <img 
+                  src="/images/sysPoly.jpg" 
+                  alt="Event photo" 
+                  className="w-full h-full object-cover shadow-md" 
+                />
+                <img 
+                  src="/images/sysP2.jpg" 
                   alt="Event photo" 
                   className="w-full h-full object-cover shadow-md" 
                 />
               </div>
+            </div>
             </div>
           </div>
         </div>

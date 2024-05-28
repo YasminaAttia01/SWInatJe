@@ -9,14 +9,14 @@ const DevisForm2 = (props) => {
         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8">
           <div className="flex flex-col gap-8">
             <DevisInput
-              label="Services demandés :"
+              label="Dimensions demandés :"
               name="hostingAndDomain"
               type="text"
               value={data.hostingAndDomain}
               onChange={handleChange}
             />
             <DevisInput
-              label="SEO et Marketing :"
+              label="L'emplacement :"
               name="seoAndMarketing"
               type="text"
               value={data.seoAndMarketing}

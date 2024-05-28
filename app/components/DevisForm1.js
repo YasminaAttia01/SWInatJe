@@ -85,7 +85,7 @@ const DevisForm1 = (props) => {
             onChange={handleChange}
           />
           <DevisInput
-            label="Sites Web concurrents :"
+            label="Projets concurrents :"
             name="competitorwebsites"
             type="text"
             value={data.competitorwebsites}
