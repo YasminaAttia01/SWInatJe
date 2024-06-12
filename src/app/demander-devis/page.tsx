@@ -4,15 +4,9 @@ import CustomHeader from "@/components/CustomHeader";
 import CustomInput from "@/components/CustomInput";
 import SectionTitle from "@/components/SectionTitle";
 import axios from "axios";
-import { Covered_By_Your_Grace } from "next/font/google";
 import { useState } from "react";
 import { InlineWidget } from "react-calendly";
 import { toast } from "react-toastify";
-
-export const covered_By_Your_Grace = Covered_By_Your_Grace({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 export default function Page() {
   const [loading, setLoading] = useState(false);

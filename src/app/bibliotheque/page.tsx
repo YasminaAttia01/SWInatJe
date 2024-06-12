@@ -4,13 +4,8 @@ import CustomHeader from "@/components/CustomHeader";
 import Document from "@/models/Document";
 
 import axios from "axios";
-import { Covered_By_Your_Grace } from "next/font/google";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-export const covered_By_Your_Grace = Covered_By_Your_Grace({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 const Page = () => {
   const [documents, setPartners] = useState<Document[]>([]);

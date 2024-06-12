@@ -6,15 +6,9 @@ import SectionTitle from "@/components/SectionTitle";
 import Event from "@/models/Event";
 
 import axios from "axios";
-import { Covered_By_Your_Grace } from "next/font/google";
 import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
-export const covered_By_Your_Grace = Covered_By_Your_Grace({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 const Page = () => {
   const [event, setEvent] = useState<Event>({
