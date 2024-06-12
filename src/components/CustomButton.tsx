@@ -4,7 +4,7 @@ import React from "react";
 interface CustomButtonProps {
   href?: string;
   label: string;
-  type: "button" | "link";
+  type: "button" | "link" | "submit";
   onclick?: () => void;
 }
 

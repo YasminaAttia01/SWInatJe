@@ -24,6 +24,8 @@ const PartnersSection = () => {
     fetchPartners();
   }, []);
 
+  if (!partners.length) return null;
+
   return (
     <section className="flex flex-col items-center justify-center gap-12 py-20  overflow-hidden">
       <div className="flex flex-col gap-2 text-center">

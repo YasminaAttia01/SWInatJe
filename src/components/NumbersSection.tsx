@@ -8,12 +8,12 @@ import Chiffres from "@/models/Chiffres";
 const NumbersSection = () => {
   const [chiffres, setChiffres] = useState<Chiffres>({
     _id: "",
-    projetsLivres: "",
-    collaborateurs: "",
-    EditionForum: "",
-    TauxStatisfaction: "",
-    TauxEmployabilite: "",
-    ActionsRSE: "",
+    projetsLivres: "50",
+    collaborateurs: "45",
+    EditionForum: "11",
+    TauxStatisfaction: "80",
+    TauxEmployabilite: "100",
+    ActionsRSE: "20",
   });
 
   useEffect(() => {

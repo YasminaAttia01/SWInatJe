@@ -86,7 +86,12 @@ export default function Navbar() {
                   >
                     {link.dropdown.map((item) => (
                       <li key={item.name} className="hover:text-yellow-500 p-2">
-                        <Link href={item.route}>{item.name}</Link>
+                        <Link
+                          onClick={() => setShowPrestationsDropdown(false)}
+                          href={item.route}
+                        >
+                          {item.name}
+                        </Link>
                       </li>
                     ))}
                   </ul>

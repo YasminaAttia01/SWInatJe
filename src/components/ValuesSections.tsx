@@ -39,7 +39,7 @@ const values = [
 const ValuesSection = () => {
   return (
     <section className="flex flex-col lg:flex-row justify-center gap-10 mx-auto py-20">
-      <div className="relative z-[1] rounded-2xl hidden xl:flex w-4/12 bg-red-500">
+      <div className="relative z-[1] rounded-2xl hidden xl:flex w-4/12">
         <div className="absolute z-[2] rounded-full -left-40 top-20 bg-primary h-96 w-96" />
         <div className="h-full z-[3] rounded-3xl overflow-hidden">
           <img

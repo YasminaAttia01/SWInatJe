@@ -1,64 +1,71 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import CustomHeader from "@/components/CustomHeader";
-import { Gallery } from "@/components/Gallery";
+import PartnersSection from "@/components/PartnersSection";
 import SectionTitle from "@/components/SectionTitle";
-import Document from "@/models/Document";
 import Event from "@/models/Event";
 
 import axios from "axios";
 import { Covered_By_Your_Grace } from "next/font/google";
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 export const covered_By_Your_Grace = Covered_By_Your_Grace({
   subsets: ["latin"],
   weight: ["400"],
 });
 
-interface ImageType {
-  src: string;
-  aspect_ratio: number;
-}
-
 const Page = () => {
-  const [event, setEvent] = useState<Event>();
-  const [images, setImages] = useState<ImageType[]>([]);
+  const [event, setEvent] = useState<Event>({
+    _id: "",
+    title: "Forum de l’emplois et des stages",
+    description:
+      "La 11e édition de l'événement phare annuel orchestré par l'INAT Junior entreprise promet une expérience exceptionnelle lors du Forum de l'emploi et des stages, qui a eu lieu le 29 novembre 2023, où un salon d'exposition a offert aux entreprises la possibilité de mettre en avant leurs activités et services devant un public d'étudiants en pleine formation en ingénierie agronomes. Cet événement a été agrémenté de conférences sous forme de panels, centrées sur la thématique: 'Regards croisés - Anticiper pour une gestion durable des ressources naturelles'. L’événement a eu un très grand succès dans l’écosystème agricole ou nous avons accueillit plus que 36 stands.",
+    images: [],
+  });
 
   useEffect(() => {
     const fetchDocuments = async () => {
       const res = await axios.get(
         `${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/event/get`
       );
-      const fetchedImages = res.data.images;
-
-      const loadImage = (src: string): Promise<ImageType> => {
-        return new Promise((resolve) => {
-          const img = new Image();
-          img.onload = () => {
-            const aspect_ratio = img.width / img.height;
-            resolve({ src, aspect_ratio });
-          };
-          img.src = src;
-        });
-      };
-
-      const transformImages = async () => {
-        const imagePromises = fetchedImages.map((imageUrl: string) =>
-          loadImage(imageUrl)
-        );
-        const transformedImages = await Promise.all(imagePromises);
-        setImages(transformedImages);
-      };
 
       setEvent(res.data);
-      transformImages();
     };
     fetchDocuments();
   }, []);
 
-  const widths = [500, 1000, 1600];
-  const ratios = [2.2, 4, 6, 8];
+  const responsive = {
+    desktop: {
+      breakpoint: {
+        max: 3000,
+        min: 1024,
+      },
+      items: 3,
+      partialVisibilityGutter: 40,
+    },
+    mobile: {
+      breakpoint: {
+        max: 464,
+        min: 0,
+      },
+      items: 1,
+      partialVisibilityGutter: 30,
+    },
+    tablet: {
+      breakpoint: {
+        max: 1024,
+        min: 464,
+      },
+      items: 2,
+      partialVisibilityGutter: 30,
+    },
+  };
 
+  if (!event) {
+    return <div>Loading...</div>;
+  }
   return (
     <main className="flex flex-col overflow-x-hidden min-h-[100vh] gap-10 items-center ">
       <CustomHeader title="Nos Événements" />
@@ -74,11 +81,47 @@ const Page = () => {
         </p>
       </div>
       <div className="w-full">
-        <Gallery
-          {...{ widths, ratios, images }}
-          lastRowBehavior="match-previous"
-        />
+        <Carousel
+          additionalTransfrom={0}
+          arrows
+          autoPlaySpeed={3000}
+          centerMode={false}
+          autoPlay={true}
+          className="min-w-full"
+          containerClass="container"
+          dotListClass=""
+          draggable
+          focusOnSelect={false}
+          infinite
+          itemClass=""
+          keyBoardControl
+          minimumTouchDrag={80}
+          pauseOnHover
+          renderArrowsWhenDisabled={false}
+          renderButtonGroupOutside={false}
+          renderDotsOutside={false}
+          responsive={responsive}
+          rewind={false}
+          rewindWithAnimation={false}
+          rtl={false}
+          shouldResetAutoplay
+          showDots={false}
+          sliderClass=""
+          slidesToSlide={1}
+          swipeable
+        >
+          {event?.images.map((image, i) => (
+            <div key={i}>
+              <img
+                src={image}
+                alt=""
+                className="object-cover w-full h-[400px]"
+              />
+            </div>
+          ))}
+        </Carousel>
       </div>
+      <PartnersSection />
     </main>
   );
 };

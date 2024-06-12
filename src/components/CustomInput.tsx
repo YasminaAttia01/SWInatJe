@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 interface CustomFormInputProps {
   label: string;
@@ -6,17 +6,19 @@ interface CustomFormInputProps {
   name: string;
   value: string;
   className?: string;
+  options?: { value: string; label: string }[];
   onChange: (e: any) => void;
 }
 
 const CustomInput = (props: CustomFormInputProps) => {
   const { label, type = "text", name, value, onChange, className = "" } = props;
+  const ref = useRef<HTMLInputElement>(null);
 
   return (
     <div className="flex flex-col gap-1 w-full">
       {type === "textarea" ? (
         <textarea
-          className={`w-full p-4 outline-none border-0 rounded-xl focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
+          className={`w-full p-4 outline-none rounded-xl border-black/30 border focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
           name={name}
           value={value}
           onChange={onChange as React.ChangeEventHandler<HTMLTextAreaElement>}
@@ -24,7 +26,7 @@ const CustomInput = (props: CustomFormInputProps) => {
         />
       ) : type === "select" ? (
         <select
-          className={`w-full p-4 outline-none border-0 rounded-xl focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
+          className={`w-full p-4 outline-none border-black/30 border rounded-xl focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
           name={name}
           value={value}
           onChange={onChange as React.ChangeEventHandler<HTMLSelectElement>}
@@ -32,22 +34,31 @@ const CustomInput = (props: CustomFormInputProps) => {
           <option value="" disabled hidden>
             {label}
           </option>
-          <option value="male">Homme</option>
-          <option value="female">Femme</option>
-          <option value="other">Autre</option>
+          {props.options?.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
         </select>
       ) : type === "date" ? (
         <input
-          className={`w-full p-4 outline-none border-0 rounded-xl focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
-          type={type}
+          className={`w-full p-4 outline-none border-black/30 border rounded-xl focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
           name={name}
           value={value}
           onChange={onChange as React.ChangeEventHandler<HTMLInputElement>}
           placeholder={label}
+          type="text"
+          ref={ref}
+          onFocus={() => {
+            if (ref.current) ref.current.type = "date";
+          }}
+          onBlur={() => {
+            if (ref.current) ref.current.type = "text";
+          }}
         />
       ) : (
         <input
-          className={`w-full p-4 outline-none border-0 rounded-xl focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
+          className={`w-full p-4 outline-none border-black/30 border rounded-xl focus:ring-primary focus:ring-2 transition-all duration-150 ${className} placeholder:text-sm`}
           type={type}
           name={name}
           value={value}
