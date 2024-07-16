@@ -116,9 +116,9 @@ const Page = () => {
         <div className="flex flex-col md:flex-row justify-between gap-10">
           <div className="relative flex flex-col gap-4 justify-center items-center rounded-3xl overflow-hidden">
             <img
-              src="/images/cultures-hors-sol-5.png"
+              src="/images/bacApotager.jpg"
               alt="Systéme Hydroponique"
-              className="object-cover h-full "
+              className="object-cover h-full"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 "></div>
             <span className="absolute bottom-5 font-bold text-xl xl:text-2xl text-white text-center truncate">

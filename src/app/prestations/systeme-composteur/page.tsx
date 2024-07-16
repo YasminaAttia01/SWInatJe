@@ -25,8 +25,8 @@ const imagePaths: ImagePaths = {
     "/images/systeme-composteur-3.jpg",
   ],
   rotary: [
-    "/images/systeme-composteur-4.jpg",
-    "/images/systeme-composteur-4.jpg",
+    "/images/composteur.jpg",
+    "/images/composteur.jpg",
   ],
 };
 
@@ -90,7 +90,7 @@ const Page: React.FC = () => {
             <span className="absolute bottom-5 font-bold text-lg text-white text-center truncate">
               {
                 compostingSystemNames[
-                  type as keyof typeof compostingSystemNames
+                type as keyof typeof compostingSystemNames
                 ]
               }
             </span>

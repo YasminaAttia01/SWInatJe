@@ -38,27 +38,16 @@ const AboutUsSection = () => {
       <div className="hidden w-full sm:flex flex-row gap-4">
         <div className="flex w-full flex-col gap-4">
           <div
-            className="h-[270px] w-full rounded-tl-3xl overflow-hidden bg-black"
-            style={{
-              backgroundImage: "url('/images/aboutus-2.jpg')",
-              backgroundSize: "cover",
-            }}
-          />
-          <div
             className="h-[270px] w-full rounded-bl-3xl overflow-hidden bg-black "
             style={{
-              backgroundImage: "url('/images/aboutus-3.jpg')",
+              backgroundImage: "url('/images/aboutus-1.jpg')",
               backgroundSize: "cover",
             }}
           />
+
+
         </div>
-        <div
-          className="w-full rounded-r-3xl overflow-hidden bg-black"
-          style={{
-            backgroundImage: "url('/images/aboutus-1.jpg')",
-            backgroundSize: "cover",
-          }}
-        />
+
       </div>
     </section>
   );

@@ -47,10 +47,10 @@ const ServicesSection = () => {
             return (
               <div
                 key={index}
-                className="w-[370px]  bg-white flex flex-col gap-8 rounded-xl overflow-hidden pb-4"
+                className="w-[370px] bg-white flex flex-col gap-8 rounded-xl overflow-hidden pb-4"
               >
                 <div
-                  className="h-[260px] relative w-full"
+                  className="h-[200px] relative w-full bg-cover bg-center"
                   style={{ backgroundImage: `url(${item.image})` }}
                 >
                   <div className="absolute -bottom-8 right-5 w-20 h-20 bg-primary rounded-xl flex items-center justify-center">
@@ -63,7 +63,7 @@ const ServicesSection = () => {
                 </div>
                 <div className="flex flex-col gap-2 px-4">
                   <h3 className="font-extrabold text-2xl">{item.title}</h3>
-                  <p className="font-medium text-grey text-sm leading-8 ">
+                  <p className="font-medium text-grey text-sm leading-8">
                     {item.description}
                   </p>
                 </div>
