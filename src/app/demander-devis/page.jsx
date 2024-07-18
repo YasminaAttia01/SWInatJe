@@ -1,19 +1,21 @@
-"use client";
+/**
+ * @use client
+ */
+"use client"
 import CustomButton from "@/components/CustomButton";
 import CustomHeader from "@/components/CustomHeader";
 import CustomInput from "@/components/CustomInput";
 import SectionTitle from "@/components/SectionTitle";
 import axios from "axios";
+//import { useRouter } from "next/router";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { InlineWidget } from "react-calendly";
 import { toast } from "react-toastify";
-import { EtudePage } from '../EtudePage/page';
-
-
+import EtudePage from '../EtudePage/page'; // Note: Import the component correctly
 
 export default function Page() {
-  const router = useRouter()
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
   const [formData, setFormData] = useState({
@@ -39,9 +41,7 @@ export default function Page() {
     extracomments: "",
   });
 
-  const handleInputChange = (
-    e
-  ) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -51,9 +51,9 @@ export default function Page() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const { fullname, birthdate, phone, gender, address, projectName } = formData;
-  
+
     if (
       !fullname.trim() ||
       !birthdate.trim() ||
@@ -65,10 +65,9 @@ export default function Page() {
       toast.error("Tous les champs marqués d'une * sont obligatoires.");
       return;
     }
-  
+
     if (projectName === "Étude") {
       router.push('/EtudePage');
-      return;
     } else {
       setActiveStep(1);
     }
@@ -107,12 +106,6 @@ export default function Page() {
       toast.error("Erreur lors de l'envoi du message");
     } finally {
       setLoading(false);
-    }
-    if (projectName === "Étude") {
-      // Afficher la page EtudePage
-      return <EtudePage />;
-    } else {
-      setActiveStep(1);
     }
   };
 
@@ -184,6 +177,7 @@ export default function Page() {
           )}
         </div>
       </div>
+      {router.pathname === '/EtudePage' && <EtudePage />} {/* Render EtudePage based on router path */}
     </main>
   );
 }

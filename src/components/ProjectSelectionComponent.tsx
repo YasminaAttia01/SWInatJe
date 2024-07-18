@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 
 const ProjectSelectionComponent = () => {
     const router = useRouter();
     const [selectedProject, setSelectedProject] = useState('');
 
-    const handleSelectionChange = (e) => {
+    const handleSelectionChange = (e: ChangeEvent<HTMLSelectElement>) => {
         setSelectedProject(e.target.value);
     };
 
